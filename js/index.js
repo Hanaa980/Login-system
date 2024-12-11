@@ -13,7 +13,7 @@ function checkToLogin() {
         document.querySelector(".alert-login").innerHTML =
             "All fields are required";
         return;
-    }
+    }else{
     for (var i = 0; i < allUsers.length; i++) {
         if (emailInputLogin.value === allUsers[i].mail) {
             if (passInputLogin.value === allUsers[i].password) {
@@ -35,7 +35,7 @@ function checkToLogin() {
     passInputLogin.value = "";
 
 }
-
+}
 
 loginBtn.addEventListener("click", function () {
     login();
