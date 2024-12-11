@@ -35,7 +35,7 @@ function checkToLogin() {
     passInputLogin.value = "";
 
 
-}
+    }   }
 
 loginBtn.addEventListener("click", function () {
     login();
