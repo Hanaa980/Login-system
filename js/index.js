@@ -28,7 +28,7 @@ function checkToLogin() {
                 return;
             }
         }
-    }}
+    }
     document.querySelector(".alert-login").innerHTML =
         "The email is incorrect or user not found.";
     emailInputLogin.value = "";
