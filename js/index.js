@@ -1,4 +1,4 @@
-var allUsers = JSON.parse(localStorage.getItem("users")),
+var allUsers = JSON.parse(localStorage.getItem("users")) || [],
     loginBtn = document.getElementById("loginBtn"),
     emailInputLogin = document.getElementById("emailInputLogin"),
     passInputLogin = document.getElementById("passInputLogin");
@@ -12,6 +12,11 @@ function checkToLogin() {
     return;
   }
 
+  if (allUsers.length === 0) {
+    document.querySelector(".alert-login").innerHTML = "No account is registered with this email.";
+    return;
+  }
+
   var foundUser = false;
   for (var i = 0; i < allUsers.length; i++) {
     if (emailInputLogin.value === allUsers[i].mail) {
@@ -22,7 +27,7 @@ function checkToLogin() {
         window.open("./home.html", "_self");
         return;
       } else {
-        document.querySelector(".alert-login").innerHTML = "The password is incorrect.";
+        document.querySelector(".alert-login").innerHTML = "Incorrect password.";
         passInputLogin.value = "";
         return;
       }
@@ -30,7 +35,7 @@ function checkToLogin() {
   }
 
   if (!foundUser) {
-    document.querySelector(".alert-login").innerHTML = "The email is incorrect or user not found.";
+    document.querySelector(".alert-login").innerHTML = "Incorrect email or password.";
   }
   emailInputLogin.value = "";
   passInputLogin.value = "";
