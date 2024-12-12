@@ -35,7 +35,7 @@ function checkToLogin() {
   }
 
   if (!foundUser) {
-    document.querySelector(".alert-login").innerHTML = "Incorrect email or password.";
+    document.querySelector(".alert-login").innerHTML = "The email is incorrect or user not found.";
   }
   emailInputLogin.value = "";
   passInputLogin.value = "";
