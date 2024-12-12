@@ -4,8 +4,7 @@ if (localStorage.getItem("userName")) {
 }
 var logOut = document.getElementById("logOut")
 
-
 logOut.addEventListener("click", function () {
     localStorage.removeItem("userName")
-    window.open("./index.html", "_self")
+    window.location.replace("./index.html")
 })
